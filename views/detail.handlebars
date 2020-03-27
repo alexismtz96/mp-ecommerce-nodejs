@@ -78,13 +78,17 @@
                                     </h3>
                                 </div>
                                 <h3 >
-                                    {{ price }}
+                                    $ {{ price }}
                                 </h3>
                                 <h3 >
-                                    {{ unit }}
+                                   Cantidad: {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                            <form action="/procesar-pago" method="POST">
+                                <script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+                                    data-preference-id="{{Pagos_Realizados}}">
+                                    </script>
+                            </form>
                         </div>
                     </div>
                 </div>
